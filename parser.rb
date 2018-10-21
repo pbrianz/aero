@@ -15,14 +15,14 @@ def parse(filename)
   end
   for key in data.keys do
     type = "Class"
-    if imported[data[key]] then
-      importer(data[key],File.open(filename + ".aero"))
-    else
-      k = data[key]
-      if k.Type then
-        if k.Type.downcase == "class" then
-          type = "Class"
-        end
+    k = data[key]
+    if k.Type then
+      if k.Type.downcase == "class" then
+        type = "class"
+      elsif k.Type.downcase == "object" then
+        type = "object"
+      elsif k.Type.downcase == "id" then
+        type = "id"
       end
     end
   end
