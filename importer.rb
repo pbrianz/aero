@@ -1,4 +1,4 @@
-def importer(filename)
+def importer(filename,arg)
   require filename
-  Start()
+  Start(arg)
 end
