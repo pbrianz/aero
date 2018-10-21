@@ -1,3 +1,5 @@
+require "yaml"
+
 def loadAero(fileName)
-  return File.read(["./",fileName,".aero"].join(""))
+  return YAML.load(File.read(["./",fileName,".aero"].join(""))
 end
