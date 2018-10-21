@@ -14,7 +14,7 @@ def parse(filename)
     print("No imports defined.  Skipping.")
   end
   for key in data.keys do
-    type = "Class"
+    type = "class"
     k = data[key]
     if k.Type then
       if k.Type.downcase == "class" then
@@ -24,6 +24,11 @@ def parse(filename)
       elsif k.Type.downcase == "id" then
         type = "id"
       end
+    else
+      type = "class"
+    end
+    if type == "class" then
+      
     end
   end
 end
